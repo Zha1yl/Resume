@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+/* для начало зададим 0 для всех маржинов и падингов,
+а потом уже будет стилизовать каждый блок по отдельности */
+* {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: flex;
+}
+/* стилизуем сайдбар */
+.aside {
+  width: 20%;
+  background: #e8eaee;
+  height: 950px;
+  flex-shrink: 0;
+}
+.aside_education {
+  margin-top: 35px;
+  margin-left: 5px;
+}
+.aside p {
+  width: 90%;
+}
+.aside_span {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.aside_education span {
+  margin-top: 20px;
+}
+.aside_education2 {
+  margin-top: 20px;
+  margin-left: 5px;
+}
+.aside p {
+  margin-top: 15px;
+}
+.aside h3 {
+  margin-top: 10px;
+}
+.aside_skills {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.aside_skills ul {
+  margin-top: 15px;
+}
+
+.skills_hr {
+  margin-left: -15px;
+}
+/* закончили стилизацию сайдбара */
+/* начинам стилизацию самого контента */
+header {
+  display: flex;
+  margin-top: 60px;
+  width: 50%;
+}
+.header_img img {
+  width: 80%;
+  border-radius: 50%;
+}
+.header_href a::before {
+  content: url(../images/Group\ 3.svg);
+}
+.header_href span::before {
+  content: url(../images/Group\ 2.svg);
+}
+
+.header_href {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.section1 {
+  color: #30353d;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 24px;
+}
+
+.section1 h2 {
+  color: #5c6168;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 3.575px;
+  width: 76px;
+}
+.section1 h3 {
+  color: #5c6168;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 15px;
+}
+.section1 span {
+  color: #5c6168;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+hr {
+  width: 100px;
+  height: 1px;
+  background: #5c6168;
+}
+
+.section1_profile {
+  margin-top: 32px;
+}
+h1 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.section1_profile p {
+  margin-top: 20px;
+  width: 50%;
+}
+.section1_experience h2 {
+  margin-top: 20px;
+}
+.section1_experience p {
+  width: 50%;
+  margin-top: 15px;
+  font-size: 11px;
+}
+.section1_experience span {
+  margin-top: 10px;
+}
+/* завершаем стлизацию контента */
+/* стилизуем футер */
+footer {
+  width: 100%;
+  height: 117px;
+  flex-shrink: 0;
+  background: #98a6b0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footer_img img {
+  width: 3%;
+  margin-left: 27px;
+}
+/* закончили с футером */
+/* Создаём анимацию */
+@keyframes animateMyresume {
+  0% {
+    margin-left: 0%;
+    width: 100%;
+  }
+  25% {
+    width: 0%;
+  }
+  50% {
+    margin-left: 50%;
+    width: 50%;
+  }
+  100% {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.header_img img {
+  animation: animateMyresume 5s ease-in-out infinite alternate;
+  animation-play-state: paused;
+  /* Поставил на паузу анимацию, чтобы воспроизвести можно удалить код, либо прописать вместо paused - running */
+}
+
+/* Пишем адаптивку на 1024px */
+@media all and (max-width: 1024px) {
+  .aside {
+    width: 35%;
+    height: 994px;
+  }
+  .section1 {
+    margin-left: 100px;
+  }
+  .section1_profile p {
+    width: 90%;
+    font-size: 15px;
+  }
+  .section1 h2 {
+    font-size: 24px;
+  }
+  .section1_experience p {
+    width: 90%;
+    font-size: 15px;
+  }
+  .section1 h3 {
+    font-size: 17px;
+  }
+  hr {
+    width: 144px;
+    height: 2px;
+  }
+}
+@media all and (max-width: 768px) {
+  .aside {
+    height: 1115px;
+  }
+}
+@media all and (max-width: 426px) {
+  h1 {
+    font-size: 23px;
+  }
+  .section1 {
+    margin-left: 8px;
+  }
+  .header_img img {
+    display: contents;
+  }
+  .section1 h2 {
+    font-size: 15px;
+  }
+  .section1_profile p {
+    font-size: 10px;
+  }
+  .section1 h3 {
+    font-size: 14px;
+  }
+  .section1_experience p {
+    font-size: 10px;
+  }
+  .aside h2 {
+    font-size: 17px;
+  }
+  hr {
+    width: 102px;
+  }
+  .aside h3 {
+    font-size: 15px;
+  }
+  .aside_skills ul {
+    font-size: 13px;
+  }
+  .footer_img img {
+    width: 5%;
+  }
+}
+@media all and (max-width: 376px) {
+  h1 {
+    font-size: 20px;
+  }
+  .aside_span {
+    font-size: 11px;
+  }
+  .aside p {
+    font-size: 11px;
+  }
+  .aside_skills ul {
+    font-size: 11px;
+  }
+  .section1 h3 {
+    font-size: 13px;
+  }
+  .section1 span {
+    font-size: 11px;
+  }
+}
+@media all and (max-width: 321px) {
+  h1 {
+    font-size: 17px;
+  }
+  .aside_skills ul {
+    font-size: 10px;
+  }
+}
